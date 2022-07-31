@@ -58,7 +58,7 @@ $ cd purchases
 # Install dependencies
 $ npm install
 
-# Rename '.env.example' to '.env' and set your env variables
+# Rename '.env.example' to '.env' and set your variables
 $ ren ".env.example" ".env"
 
 # Run the migrations
@@ -77,7 +77,7 @@ $ cd web
 # Install dependencies
 $ yarn
 
-# Make a copy of '.env.local.example' to '.env.local'
+# Rename '.env.local.example' to '.env.local' and set your variables
 $ ren ".env.example" ".env.local"
 
 # Start the application
@@ -109,3 +109,5 @@ $ yarn dev
 - [x] <a href="https://auth0.com/">Auth0</a>
 - [x] <a href="https://graphql.org/">GraphQL</a>
 - [x] <a href="https://www.docker.com/">Docker</a>
+- [x] <a href="https://www.apollo.io/">Apollo</a>
+- [x] <a href="https://graphql.org/">GraphQL</a>
