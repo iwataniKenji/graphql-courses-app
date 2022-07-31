@@ -1,14 +1,15 @@
 import { PrismaService } from 'src/database/prisma/prisma.service';
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Get, UseGuards } from '@nestjs/common';
 import { AuthorizationGuard } from './auth/authorization.guard';
+import { Query, Resolver } from '@nestjs/graphql';
 
-@Controller('test')
-export class TestController {
+@Resolver('test')
+export class TestResolver {
   constructor(private prisma: PrismaService) {}
 
-  @Get('ok')
+  @Query(() => String)
   @UseGuards(AuthorizationGuard)
   hello() {
-    return this.prisma.customer.findMany();
+    return 'Hello World!';
   }
 }
