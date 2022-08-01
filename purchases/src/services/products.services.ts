@@ -10,12 +10,18 @@ interface CreateProductParams {
 export class ProductsService {
   constructor(private prisma: PrismaService) {}
 
-  // listagem de produtos
   listAllProducts() {
     return this.prisma.product.findMany();
   }
 
-  // criação de produtos
+  getProductById(id: string) {
+    return this.prisma.product.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
+
   async createProduct({ title }: CreateProductParams) {
     const slug = slugify(title, { lower: true });
 

@@ -7,13 +7,12 @@ import { AuthorizationGuard } from '../../auth/authorization.guard';
 
 import { Product } from './../models/product';
 
-@Resolver('test')
+@Resolver(() => Product)
 export class ProductsResolver {
   constructor(private productsService: ProductsService) {}
 
   // sem autenticação (@UseGuards) -> rota pública
   @Query(() => [Product])
-  // @UseGuards(AuthorizationGuard)
   products() {
     return this.productsService.listAllProducts();
   }
