@@ -8,6 +8,7 @@ import { ProductsResolver } from './graphql/resolvers/products.resolver';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import path from 'node:path';
+import { CustomersService } from 'src/services/customers.service';
 
 @Module({
   // possibilita leitura do .env no root automaticamente
@@ -24,6 +25,7 @@ import path from 'node:path';
     ProductsService,
     PurchasesResolver,
     PurchasesService,
+    CustomersService,
   ],
 })
 export class HttpModule {}
