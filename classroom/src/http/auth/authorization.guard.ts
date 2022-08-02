@@ -6,21 +6,16 @@ import {
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { GqlExecutionContext } from '@nestjs/graphql';
-import jwt from 'express-jwt';
 import { expressJwtSecret } from 'jwks-rsa';
 import { promisify } from 'node:util';
-
-// guard -> igual ao middleware do express (decide se prossegue ou não)
+import jwt from 'express-jwt';
 
 @Injectable()
 export class AuthorizationGuard implements CanActivate {
   private AUTH0_AUDIENCE: string;
   private AUTH0_DOMAIN: string;
 
-  // injeção de dependência
   constructor(private configService: ConfigService) {
-    // primeiro -> nome na classe
-    // segundo -> nome no .env
     this.AUTH0_AUDIENCE = this.configService.get('AUTH0_AUDIENCE') ?? '';
     this.AUTH0_DOMAIN = this.configService.get('AUTH0_DOMAIN') ?? '';
   }
