@@ -1,7 +1,6 @@
 import { CreateProductInput } from './../inputs/create-product-input';
 import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-
 import { ProductsService } from '../../../services/products.services';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
 
