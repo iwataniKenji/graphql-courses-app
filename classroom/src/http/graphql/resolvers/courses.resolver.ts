@@ -10,7 +10,7 @@ export class CoursesResolver {
 
   @Query(() => [Course])
   @UseGuards(AuthorizationGuard)
-  students() {
+  courses() {
     return this.coursesService.listAllCourses();
   }
 }
