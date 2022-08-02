@@ -18,9 +18,9 @@
 
 <H2 id="about">📙 About</H2>
 
-<!-- <p>Using the latest technologies, this event platform is an single page application developed for content creators to organize classes and livestreams based on a determined date and time to be available for the user. Also, this system has GraphCMS integration that allows easier way to input data to the components.</p>
-<p>Originally created on Ignite Lab #2 from <a href="https://www.rocketseat.com.br/">Rocketseat</a> and made by <a href="https://www.linkedin.com/in/kleverson-kenji-iwatani/">Kenji Iwatani</a></p>
-<p>
+<!-- <p>Using the latest technologies, this event platform is an single page application developed for content creators to organize classes and livestreams based on a determined date and time to be available for the user. Also, this system has GraphCMS integration that allows easier way to input data to the components.</p> -->
+<p>Originally created on Ignite Lab #1 from <a href="https://www.rocketseat.com.br/">Rocketseat</a> and made by <a href="https://www.linkedin.com/in/kleverson-kenji-iwatani/">Kenji Iwatani</a></p>
+<!-- <p>
     <h3><a href="https://kenji-event-platform.vercel.app/">Check website &rarr;</a></h3>
 </p> -->
 
@@ -51,9 +51,13 @@ $ cd ignite-lab
 ```bash
 # Running the database
 $ docker-compose up -d
+```
 
-# Access the "server" folder
-$ cd purchases
+<h4>Backend (do the same on "purchases" folder)</h4>
+
+```bash
+# Access the "classroom" folder
+$ cd classroom
 
 # Install dependencies
 $ npm install
@@ -90,8 +94,11 @@ $ yarn dev
 
 - [x] Complete application that includes frontend, backend and database usage
 - [x] A clean architecture driven project
-<!-- - [x] Data fetching through queries and mutations
-- [x] GraphQL code generator usage for automate queries and mutations creation -->
+- [x] Basic GraphQL implementation using inputs, models and resolvers
+- [x] Data fetching through queries and mutations
+- [x] Prisma integration as ORM service
+
+<!-- - [x] GraphQL code generator usage for automate queries and mutations creation -->
 
 ---
 
