@@ -24,6 +24,7 @@ export class EnrollmentsService {
       },
       orderBy: {
         createdAt: 'desc',
+      },
     });
   }
 }
