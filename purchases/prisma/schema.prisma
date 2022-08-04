@@ -33,7 +33,7 @@ model Product {
   updatedAt DateTime @default(now()) @updatedAt
 }
 
-enum PurchaseState {
+enum PurchaseStatus {
   PENDING
   APPROVED
   FAILED
@@ -42,7 +42,7 @@ enum PurchaseState {
 model Purchase {
   id String @id @default(uuid())
 
-  status PurchaseState @default(PENDING)
+  status PurchaseStatus @default(PENDING)
 
   customer   Customer @relation(fields: [customerId], references: [id])
   customerId String
