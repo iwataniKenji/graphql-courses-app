@@ -1,3 +1,4 @@
+import { MessagingModule } from './../messaging/messaging.module';
 import { customersResolver } from './graphql/resolvers/customers.resolver';
 import { PurchasesService } from './../services/purchases.services';
 import { PurchasesResolver } from './graphql/resolvers/purchases.resolver';
@@ -16,11 +17,12 @@ import path from 'node:path';
   imports: [
     ConfigModule.forRoot(),
     DatabaseModule,
+    MessagingModule,
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
     }),
-  ], 
+  ],
   providers: [
     ProductsResolver,
     ProductsService,

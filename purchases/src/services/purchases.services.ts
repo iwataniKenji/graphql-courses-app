@@ -1,3 +1,4 @@
+import { KafkaService } from './../messaging/kafka.service';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma/prisma.service';
 
@@ -8,7 +9,7 @@ interface CreatePurchaseParams {
 
 @Injectable()
 export class PurchasesService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService, private kafka: KafkaService) {}
 
   listAllPurchases() {
     return this.prisma.purchase.findMany({
@@ -30,7 +31,7 @@ export class PurchasesService {
   }
 
   async createPurchase({ customerId, productId }: CreatePurchaseParams) {
-    const product = await this.prisma.purchase.findUnique({
+    const product = await this.prisma.product.findUnique({
       where: {
         id: productId,
       },
@@ -40,11 +41,30 @@ export class PurchasesService {
       throw new Error('Product not found.');
     }
 
-    return await this.prisma.purchase.create({
+    const purchase = await this.prisma.purchase.create({
       data: {
         customerId,
         productId,
       },
     });
+
+    const customer = await this.prisma.customer.findUnique({
+      where: { id: customerId },
+    });
+
+    // emitir mensagem (tópico, informação da mensagem)
+    // tópico deve existir na tabela
+    this.kafka.emit('purchase.new-purchase', {
+      customer: {
+        authUserId: customer.authUserId,
+      },
+      product: {
+        id: product.id,
+        title: product.title,
+        slug: product.slug,
+      },
+    });
+
+    return purchase;
   }
 }
