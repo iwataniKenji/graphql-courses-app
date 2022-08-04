@@ -6,7 +6,7 @@ export class Product {
   id: string;
 
   @Field()
-  type: string;
+  title: string;
 
   @Field()
   slug: string;
