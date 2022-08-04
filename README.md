@@ -118,3 +118,4 @@ $ yarn dev
 - [x] <a href="https://www.docker.com/">Docker</a>
 - [x] <a href="https://www.apollo.io/">Apollo</a>
 - [x] <a href="https://graphql.org/">GraphQL</a>
+- [x] <a href="https://kafka.js.org/">Kafka</a>

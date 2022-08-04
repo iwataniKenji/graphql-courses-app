@@ -25,7 +25,7 @@ export class CoursesService {
   async createCourse({ title }: CreateCourseParams) {
     const slug = slugify(title, { lower: true });
 
-    const courseAlreadyExists = this.prisma.course.findUnique({
+    const courseAlreadyExists = await this.prisma.course.findUnique({
       where: {
         slug,
       },
