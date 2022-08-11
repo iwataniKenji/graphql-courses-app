@@ -97,6 +97,7 @@ $ yarn dev
 - [x] Basic GraphQL implementation using inputs, models and resolvers
 - [x] Data fetching through queries and mutations
 - [x] Prisma integration as ORM service
+- [x] Getting data from two different APIs (classroom and purchases) at the same time using Apollo Federation
 
 <!-- - [x] GraphQL code generator usage for automate queries and mutations creation -->
 
