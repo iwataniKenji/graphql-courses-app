@@ -13,7 +13,7 @@
 </p>
 
 <h4 align="center">
-   🚧 Ignite Lab #1 in progress... 🚧
+   🚧 GraphQL Courses App in progress... 🚧
 </h4>
 
 <H2 id="about">📙 About</H2>
