@@ -1,4 +1,4 @@
-import { withPageAuthRequired } from "@auth0/nextjs-auth0"
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Head from "next/head";
 import { CalendarIcon } from "@heroicons/react/solid";
 import { Header } from "../../components/Header";
@@ -9,33 +9,33 @@ import Link from "next/link";
 
 const applicants = [
   {
-    name: 'Emily Selman',
-    email: 'emily.selman@example.com',
+    name: "Emily Selman",
+    email: "emily.selman@example.com",
     imageUrl:
-      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: 'Kristin Watson',
-    email: 'kristin.watson@example.com',
+    name: "Kristin Watson",
+    email: "kristin.watson@example.com",
     imageUrl:
-      'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: 'Emma Dorsey',
-    email: 'emma.dorsey@example.com',
+    name: "Emma Dorsey",
+    email: "emma.dorsey@example.com",
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
 ];
 
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  day: '2-digit',
-  month: 'long',
-  year: 'numeric',
-})
+const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
 
 function Courses() {
-  const { data } = useMe()
+  const { data } = useMe();
 
   return (
     <>
@@ -49,7 +49,9 @@ function Courses() {
           <Header />
           <main className="py-20 max-w-7xl mx-auto ">
             <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-              <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Estudar</h2>
+              <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">
+                Estudar
+              </h2>
               <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
                 Meus cursos
               </p>
@@ -63,15 +65,25 @@ function Courses() {
                       <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
                         <div className="truncate">
                           <div className="flex text-sm">
-                            <p className="font-medium text-indigo-600 truncate">{enrollment.course.title}</p>
-                            <p className="ml-1 flex-shrink-0 font-normal text-gray-500">em Programação</p>
+                            <p className="font-medium text-indigo-600 truncate">
+                              {enrollment.course.title}
+                            </p>
+                            <p className="ml-1 flex-shrink-0 font-normal text-gray-500">
+                              em Programação
+                            </p>
                           </div>
                           <div className="mt-2 flex">
                             <div className="flex items-center text-sm text-gray-500">
-                              <CalendarIcon className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                              <CalendarIcon
+                                className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                                aria-hidden="true"
+                              />
                               <p>
-                                Turma inicia em <time dateTime={enrollment.createdAt}>
-                                  {dateFormatter.format(new Date(enrollment.createdAt))}
+                                Turma inicia em{" "}
+                                <time dateTime={enrollment.createdAt}>
+                                  {dateFormatter.format(
+                                    new Date(enrollment.createdAt)
+                                  )}
                                 </time>
                               </p>
                             </div>
@@ -107,11 +119,11 @@ function Courses() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export const getServerSideProps = withPageAuthRequired({
-  returnTo: '/'
-})
+  returnTo: "/",
+});
 
-export default withApollo(Courses)
+export default withApollo(Courses);

@@ -2,17 +2,17 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import { useUser } from '@auth0/nextjs-auth0'
+import { useUser } from "@auth0/nextjs-auth0";
 
 const navigation = [
-  { name: 'Faça sua matrícula', href: '/enroll' },
-  { name: 'Nosso blog', href: '#' },
-  { name: 'Histórias de alunos', href: '#' },
-  { name: 'Sobre a empresa', href: '#' },
-]
+  { name: "Faça sua matrícula", href: "/enroll" },
+  { name: "Nosso blog", href: "#" },
+  { name: "Histórias de alunos", href: "#" },
+  { name: "Sobre a empresa", href: "#" },
+];
 
 export function Header() {
-  const { user } = useUser()
+  const { user } = useUser();
 
   return (
     <Popover as="header" className="relative">
@@ -52,25 +52,29 @@ export function Header() {
               ))}
             </div>
           </div>
-          
-          { user ? (
+
+          {user ? (
             <div className="hidden md:flex md:items-center md:space-x-6">
               <Link href="/app/courses">
-                <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700">Meus cursos</a>
+                <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700">
+                  Meus cursos
+                </a>
               </Link>
               <Link href="/api/auth/logout">
-                <a className="text-base font-medium text-white hover:text-gray-300">Sair do app</a>
+                <a className="text-base font-medium text-white hover:text-gray-300">
+                  Sair do app
+                </a>
               </Link>
             </div>
           ) : (
             <div className="hidden md:flex md:items-center md:space-x-6">
               <Link href="/api/auth/login">
-                <a className="text-base font-medium text-white hover:text-gray-300">Minha conta</a>
+                <a className="text-base font-medium text-white hover:text-gray-300">
+                  Minha conta
+                </a>
               </Link>
-            </div>  
-          ) }
-          
-
+            </div>
+          )}
         </nav>
       </div>
 
@@ -83,7 +87,10 @@ export function Header() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+        <Popover.Panel
+          focus
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden"
+        >
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <div>
@@ -103,11 +110,10 @@ export function Header() {
             <div className="pt-5 pb-6">
               <div className="px-2 space-y-1">
                 {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                  >
-                    <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">{item.name}</a>
+                  <Link key={item.name} href={item.href}>
+                    <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                      {item.name}
+                    </a>
                   </Link>
                 ))}
               </div>
@@ -121,7 +127,7 @@ export function Header() {
               </div>
               <div className="mt-6 px-5">
                 <p className="text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
+                  Existing customer?{" "}
                   <a href="#" className="text-gray-900 hover:underline">
                     Login
                   </a>
