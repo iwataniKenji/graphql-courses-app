@@ -18,11 +18,10 @@
 
 <H2 id="about">📙 About</H2>
 
-<!-- <p>Using the latest technologies, this event platform is an single page application developed for content creators to organize classes and livestreams based on a determined date and time to be available for the user. Also, this system has GraphCMS integration that allows easier way to input data to the components.</p> -->
+<p>Another project based on GraphQL usage that includes simple but powerful features such as getting data from two different API sources at the same time, server side rendering provided by the nextjs integration and much more. In addiction, this course plaftform was developed with NestJS this time, unlike the previous projects brought by Rocketseat that uses only Node Express instead.
+In conclusion, this layout was premade provided, taking into account the application is mostly focused on learning backend implementations (that was actually pretty challenging fixing mistyping and version bugs).</p>
+
 <p>Originally created on Ignite Lab #1 from <a href="https://www.rocketseat.com.br/">Rocketseat</a> and made by <a href="https://www.linkedin.com/in/kleverson-kenji-iwatani/">Kenji Iwatani</a></p>
-<!-- <p>
-    <h3><a href="https://kenji-event-platform.vercel.app/">Check website &rarr;</a></h3>
-</p> -->
 
 ---
 
@@ -53,7 +52,7 @@ $ cd ignite-lab
 $ docker-compose up -d
 ```
 
-<h4>Backend (do the same on "purchases" folder)</h4>
+<h4>Backend (do the same on "purchases" and "gateway" folder)</h4>
 
 ```bash
 # Access the "classroom" folder
@@ -69,7 +68,7 @@ $ ren ".env.example" ".env"
 $ npx prisma migrate dev
 
 # Start the server
-$ npm run dev
+$ npm run start:dev
 ```
 
 <h4>Frontend</h4>
