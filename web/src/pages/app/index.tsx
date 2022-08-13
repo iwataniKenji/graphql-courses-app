@@ -4,8 +4,8 @@ import { withApollo } from "../../lib/withApollo";
 
 function Home({ data }) {
   const { user } = useUser();
-  // const { data, loading, error } = useGetProductsQuery();
-
+  const { data: me } = useMeQuery();
+  
   return (
     <div>
       <h1>Hello World</h1>
@@ -19,7 +19,11 @@ function Home({ data }) {
 // verifica se usuários está autenticado e redireciona para login caso não esteja
 export const getServerSideProps = withPageAuthRequired({
   getServerSideProps: async (ctx) => {
-    return await getServerPageGetProducts({}, ctx);
+    // getServerPageGetProducts({}, ctx);
+
+    return {
+      props: {},
+    };
   },
 });
 
