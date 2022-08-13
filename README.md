@@ -120,4 +120,5 @@ $ yarn dev
 - [x] <a href="https://www.apollo.io/">Apollo</a>
 - [x] <a href="https://www.apollographql.com/apollo-federation/">Apollo Federation</a>
 - [x] <a href="https://graphql.org/">GraphQL</a>
+- [x] <a href="https://www.graphql-code-generator.com/">Codegen</a>
 - [x] <a href="https://kafka.js.org/">Kafka</a>
