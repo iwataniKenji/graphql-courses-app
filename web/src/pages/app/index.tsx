@@ -5,9 +5,9 @@ import { withApollo } from "../../lib/withApollo";
 function Home({ data }) {
   const { user } = useUser();
   const { data: me } = useMeQuery();
-  
+
   return (
-    <div>
+    <div className="text-violet-500">
       <h1>Hello World</h1>
       <pre>{JSON.stringify(data.products, null, 2)}</pre>
       <pre>{JSON.stringify(user, null, 2)}</pre>

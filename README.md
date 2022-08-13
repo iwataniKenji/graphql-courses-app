@@ -110,6 +110,8 @@ $ yarn dev
 - [x] <a href="https://nextjs.org/">NextJS</a>
 - [x] <a href="https://reactjs.org/">React</a>
 - [x] <a href="https://www.typescriptlang.org/">Typescript</a>
+- [x] <a href="https://tailwindcss.com/">Tailwind CSS</a>
+- [x] <a href="https://www.graphql-code-generator.com/">Codegen</a>
 
 <h4>Backend</h4>
 
@@ -120,5 +122,4 @@ $ yarn dev
 - [x] <a href="https://www.apollo.io/">Apollo</a>
 - [x] <a href="https://www.apollographql.com/apollo-federation/">Apollo Federation</a>
 - [x] <a href="https://graphql.org/">GraphQL</a>
-- [x] <a href="https://www.graphql-code-generator.com/">Codegen</a>
 - [x] <a href="https://kafka.js.org/">Kafka</a>
