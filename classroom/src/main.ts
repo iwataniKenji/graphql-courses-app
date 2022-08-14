@@ -22,6 +22,6 @@ async function bootstrap() {
   app.listen(3334).then(() => {
     console.log('[Classroom]: HTTP server running');
   });
-} 
+}
 
 bootstrap();

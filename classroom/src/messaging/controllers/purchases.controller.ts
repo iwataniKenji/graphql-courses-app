@@ -14,9 +14,9 @@ export interface Product {
   slug: string;
 }
 
-interface PurchaseCreatedPayload {
+export interface PurchaseCreatedPayload {
   customer: Customer;
-  Product: Product;
+  product: Product;
 }
 
 @Controller()
