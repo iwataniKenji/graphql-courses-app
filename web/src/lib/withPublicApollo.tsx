@@ -14,7 +14,7 @@ export const withPublicApollo = (Component: NextPage) => {
   return function Provider(props: any) {
     return (
       <ApolloProvider client={getApolloClient(undefined, props.apolloState)}>
-        <Component {...props} />
+        <Component />
       </ApolloProvider>
     );
   };

@@ -4,7 +4,7 @@ import { CalendarIcon } from "@heroicons/react/solid";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { withApollo } from "../../lib/withApollo";
-import { useMe } from "../../graphql/generated/page";
+import { useMe } from "../../graphql/generated/pages";
 import Link from "next/link";
 
 const applicants = [
