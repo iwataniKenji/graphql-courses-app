@@ -13,7 +13,7 @@ import { AuthorizationGuard } from '../../auth/authorization.guard';
 import { Customer } from '../models/customer';
 
 @Resolver(() => Customer)
-export class customersResolver {
+export class CustomersResolver {
   constructor(
     private customersService: CustomersService,
     private purchasesService: PurchasesService,
@@ -32,6 +32,6 @@ export class customersResolver {
 
   @ResolveReference()
   resolveReference(reference: { authUserId: string }) {
-    return this.curstomersService.getCustomerByAuthUserId(reference.authUserId);
+    return this.customersService.getCustomerByAuthUserId(reference.authUserId);
   }
 }

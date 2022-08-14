@@ -1,5 +1,5 @@
 import { MessagingModule } from './../messaging/messaging.module';
-import { customersResolver } from './graphql/resolvers/customers.resolver';
+import { CustomersResolver } from './graphql/resolvers/customers.resolver';
 import { PurchasesService } from './../services/purchases.services';
 import { PurchasesResolver } from './graphql/resolvers/purchases.resolver';
 import { ProductsService } from './../services/products.services';
@@ -9,7 +9,10 @@ import { ConfigModule } from '@nestjs/config';
 import { ProductsResolver } from './graphql/resolvers/products.resolver';
 import { CustomersService } from 'src/services/customers.service';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/apollo';
+import {
+  ApolloFederationDriver,
+  ApolloFederationDriverConfig,
+} from '@nestjs/apollo';
 import path from 'node:path';
 
 @Module({
@@ -28,7 +31,7 @@ import path from 'node:path';
     ProductsService,
     PurchasesResolver,
     PurchasesService,
-    customersResolver,
+    CustomersResolver,
     CustomersService,
   ],
 })
