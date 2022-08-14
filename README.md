@@ -1,6 +1,4 @@
-<!-- <section align="center">
-    <img src="./src/assets/cover.svg" />
-</section> -->
+<h1 align="center">GRAPHQL COURSES APP</h1>
 
 <h2 align="center">Summary</h2>
 
@@ -13,7 +11,7 @@
 </p>
 
 <h4 align="center">
-   🚧 GraphQL Courses App in progress... 🚧
+   ✔️ GraphQL Courses App finished  ✔️
 </h4>
 
 <H2 id="about">📙 About</H2>
@@ -27,9 +25,9 @@ In conclusion, this layout was premade provided, taking into account the applica
 
 <H2 id="preview">🖼️ Preview</H2>
 
-<!-- <section align="center">
-    <img alt="Event Platform website overview" src="./src/assets/preview.gif"/>
-</section> -->
+<section align="center">
+    <img alt="GraphQL Courses App website overview" src="./preview.gif"/>
+</section>
 
 ---
 
@@ -97,8 +95,7 @@ $ yarn dev
 - [x] Data fetching through queries and mutations
 - [x] Prisma integration as ORM service
 - [x] Getting data from two different APIs (classroom and purchases) at the same time using Apollo Federation
-
-<!-- - [x] GraphQL code generator usage for automate queries and mutations creation -->
+- [ ] Full integration of backend, database and gateway on the frontend template  
 
 ---
 
